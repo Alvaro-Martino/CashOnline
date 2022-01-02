@@ -12,6 +12,24 @@ para mayor simplicidad pueden seguir el tutorial que les voy a dejar aqui:
 
 https://www.youtube.com/watch?v=hUZKNsnHe_A
 
+dato importante, a la hora de hacer el import, seleccionar la carpeta docs y crear dos stores procedures que
+se me hicieron imposible exportar:
+
+1- GET_LOANS - codigo: 
+
+CREATE PROCEDURE `GET_LOANS` (IN id int(50))
+BEGIN
+    SELECT * FROM loan WHERE user_id = id;
+END
+
+2- DELETE_LOANS_BY_USER_ID - codigo:
+
+CREATE PROCEDURE `DELETE_LOANS_BY_USER_ID` (IN id int(50))
+BEGIN
+    DELETE FROM loan WHERE user_id = id;
+END
+
+
 una vez importada la base de datos, debera poner en una terminal del IDE que utilize "mvn clean install",
 lo cual hara que se instalen tanto las dependencias como que procese el archivo api-cash-online.yml ubicado en
 resources/openapi y se autogenere el codigo.
